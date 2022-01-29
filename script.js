@@ -49,9 +49,9 @@ function changeColor(e){
         e.target.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`;
     } else if (currentMode === 'eraser') {
         e.target.style.backgroundColor = '#FEFEFE';
-    } //else if (currentMode === 'charcoal') {
-        //e.target.style.backgroundColor = 
-   // }
+    } /*else if (currentMode === 'charcoal') {
+        e.target.style.backgroundColor = 
+   }*/
 }
 
 function activateNewMode(newMode) {
@@ -73,8 +73,10 @@ function activateNewMode(newMode) {
         eraserBtn.classList.add('active');
     } else if (newMode === 'charcoal') {
         charcoalBtn.classList.add('active');
+    }
 }
 
-window.onload = () => {
+window.onload = function() {
     makeGrid(defaultSize);
+    activateNewMode('color');
 }
