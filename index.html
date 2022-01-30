@@ -11,6 +11,7 @@
     <div class='header'>Etch-a-Sketch</div>
     <div class='content'>
         <div class='controlPanel'>
+            <input type='color' id='colorPicker' value ='#000000'>
             <button class='colorBtn'>Color</button>
             <button class='rainbowBtn'>Rainbow</button>
             <button class='charcoalBtn'>Charcoal</button>
@@ -19,7 +20,10 @@
         </div>
         <div id='container' class='container'></div>
         <div class='sizeSelector'>
-            <button class='size selector'>Size</button>
+            <p><span id='sizeDisplay'>16 x 16</span></p>
+            <div class='sliderContainer'>
+                <input type='range' min='4' max='64' value='16' class='slider' id='sizeSlider'>
+            </div>
         </div>
     </div>  
 </body>
