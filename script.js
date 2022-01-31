@@ -38,6 +38,9 @@ slider.addEventListener('change', function(){
     setCurrentSize(this.value);
     makeGrid(this.value);
 });
+slider.addEventListener('mousemove', function(){
+    sizeDisplay.innerHTML = `${this.value} x ${this.value}`;
+});
 clearBtn.addEventListener('click', function() {
     container.innerHTML='';
     makeGrid(currentSize);
@@ -95,7 +98,8 @@ function activateNewMode(newMode) {
 //color functions
 function newColor(event) {
     currentColor = event.target.value;
-}
+    currentMode = 'color';
+};
 
 function changeColor(e){
     if (currentMode === 'color') {
@@ -110,11 +114,11 @@ function changeColor(e){
     } else if (currentMode === 'charcoal') {
         e.target.style.backgroundColor = 'black';
         e.target.style.opacity = (parseFloat(e.target.style.opacity) || 0) + 0.2;
-   }
-}
+   };
+};
 
 //onload
 window.onload = function() {
     makeGrid(defaultSize);
     activateNewMode('color');
-}
+};
